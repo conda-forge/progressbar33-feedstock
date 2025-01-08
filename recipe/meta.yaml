@@ -1,6 +1,5 @@
 {% set name = "progressbar33" %}
 {% set version = "2.4" %}
-{% set sha256 = "51fe0d9b3b4023db2f983eeccdfc8c9846b84db8443b9bee002c7f58f4376eff" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 51fe0d9b3b4023db2f983eeccdfc8c9846b84db8443b9bee002c7f58f4376eff
 
 build:
   noarch: python
   number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
